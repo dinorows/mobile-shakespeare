@@ -1,0 +1,5 @@
+git remote add origin https://github.com/dinorows/twtrfe.git
+git branch -M master
+git add .
+git commit -m "First commit"
+git push --set-upstream origin master
