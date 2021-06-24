@@ -2,3 +2,6 @@ flask
 flask-api
 flask-cors
 bson
+numpy
+sklearn
+sentence-transformers
