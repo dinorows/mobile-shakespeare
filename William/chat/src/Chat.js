@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
@@ -100,6 +101,8 @@ function Chat() {
     const [userEntry, setUserEntry] = useState("");
     const [messageId, setMessageId] = useState(1);
 
+    const { transcript, resetTranscript, listening, browserSupportsSpeechRecognition } = useSpeechRecognition();
+
     const messagesEndRef = useRef(null)
 
     const scrollToBottom = () => {
@@ -109,6 +112,12 @@ function Chat() {
     useEffect(() => {
         scrollToBottom()
     }, [messages]);
+
+    const micSvg =
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
+            <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z" />
+            <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z" />
+        </svg>
 
     function renderChat(msg) {
         return (
@@ -129,21 +138,39 @@ function Chat() {
         )
     }
 
-    async function processMsg(e) {
-        e.preventDefault();
+    function startListening() {
+        SpeechRecognition.startListening({
+            continuous: true,
+            language: 'zh-CN',
+        })
+    }
 
+    async function processTextMsg(e) {
+        e.preventDefault();
+        e.target[1].value = "";
+        await processMessage(userEntry);
+    }
+
+    async function processAudioMessage() {
+        SpeechRecognition.stopListening();
+        if (transcript.length > 0) {
+            await processMessage(transcript);
+        }
+        resetTranscript();
+    }
+
+    async function processMessage(text) {
         let newMessages = [...messages];
         let newId = messageId;
 
-        newMessages.push({ id: newId, message: userEntry, user: true });
+        newMessages.push({ id: newId, message: text, user: true });
         newId += 1;
         setMessages(newMessages);
         setMessageId(newId);
-        e.target[0].value = "";
 
         let response = "No response";
         try {
-            response = await fetch("http://localhost:5000/next-en/" + userEntry);
+            response = await fetch("http://localhost:5000/next-zh/" + text);
 
             if (response.ok) {
 
@@ -188,7 +215,15 @@ function Chat() {
             <div>
                 <Form inline className='w-100 py-1 d-flex justify-content-between align-items-center'
                     id='chatbox'
-                    onSubmit={processMsg}>
+                    onSubmit={processTextMsg}>
+                    {listening ?
+                        <Button variant='secondary' onClick={processAudioMessage}>
+                            {micSvg}
+                        </Button> :
+                        <Button variant='primary' onClick={startListening}>
+                            {micSvg}
+                        </Button>
+                    }
                     <Form.Group style={{ flex: 1 }} controlId='submitControl'>
                         <Form.Control required
                             type='text' placeholder='Type Message here...'
@@ -199,10 +234,6 @@ function Chat() {
                         Send
                     </Button>
                 </Form>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
-                    <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z" />
-                    <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z" />
-                </svg>
             </div>
         </Container>
     )
