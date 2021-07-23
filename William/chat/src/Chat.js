@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import React, {useState, useEffect, useRef} from 'react';
+import SpeechRecognition, {useSpeechRecognition} from 'react-speech-recognition';
 
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
@@ -7,8 +7,8 @@ import Form from 'react-bootstrap/Form';
 
 const dialog = {
     "actors": [
-        { "name": "A", "id": "A" },
-        { "name": "B", "id": "B" },
+        {"name": "A", "id": "A"},
+        {"name": "B", "id": "B"},
     ],
     "dialogue": [
         {
@@ -96,17 +96,19 @@ const dialog = {
 }
 
 function Chat() {
-    const [messages, setMessages] = useState([{ id: 0, message: "Hello! 你好！", user: false },]);
+    const [messages, setMessages] = useState([{id: 0, message: "Hello! 你好！", user: false},]);
 
     const [userEntry, setUserEntry] = useState("");
     const [messageId, setMessageId] = useState(1);
 
-    const { transcript, resetTranscript, listening, browserSupportsSpeechRecognition } = useSpeechRecognition();
+    const {transcript, resetTranscript, listening, browserSupportsSpeechRecognition} = useSpeechRecognition();
 
     const messagesEndRef = useRef(null)
 
+    const synthRef = React.useRef(window.speechSynthesis);
+
     const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+        messagesEndRef.current?.scrollIntoView({behavior: "smooth"})
     }
 
     useEffect(() => {
@@ -114,9 +116,11 @@ function Chat() {
     }, [messages]);
 
     const micSvg =
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
-            <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z" />
-            <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic"
+             viewBox="0 0 16 16">
+            <path
+                d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
+            <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z"/>
         </svg>
 
     function renderChat(msg) {
@@ -163,7 +167,7 @@ function Chat() {
         let newMessages = [...messages];
         let newId = messageId;
 
-        newMessages.push({ id: newId, message: text, user: true });
+        newMessages.push({id: newId, message: text, user: true});
         newId += 1;
         setMessages(newMessages);
         setMessageId(newId);
@@ -185,11 +189,14 @@ function Chat() {
             alert("exception on get");
         }
 
-        newMessages.push({ id: newId, message: response, user: false });
+        newMessages.push({id: newId, message: response, user: false});
         newId += 1;
         setMessages(newMessages);
         setMessageId(newId);
         scrollToBottom();
+        const utter = new SpeechSynthesisUtterance(response);
+        utter.lang = 'zh'
+        synthRef.current.speak(utter);
     }
 
     function handleUserChange(e) {
@@ -210,12 +217,12 @@ function Chat() {
                 {messages && messages.map((msg) => (
                     renderChat(msg)
                 ))}
-                <div ref={messagesEndRef} />
+                <div ref={messagesEndRef}/>
             </div>
             <div>
                 <Form inline className='w-100 py-1 d-flex justify-content-between align-items-center'
-                    id='chatbox'
-                    onSubmit={processTextMsg}>
+                      id='chatbox'
+                      onSubmit={processTextMsg}>
                     {listening ?
                         <Button variant='secondary' onClick={processAudioMessage}>
                             {micSvg}
@@ -224,10 +231,10 @@ function Chat() {
                             {micSvg}
                         </Button>
                     }
-                    <Form.Group style={{ flex: 1 }} controlId='submitControl'>
+                    <Form.Group style={{flex: 1}} controlId='submitControl'>
                         <Form.Control required
-                            type='text' placeholder='Type Message here...'
-                            onChange={handleUserChange}
+                                      type='text' placeholder='Type Message here...'
+                                      onChange={handleUserChange}
                         />
                     </Form.Group>
                     <Button variant='primary' type='submit'>
