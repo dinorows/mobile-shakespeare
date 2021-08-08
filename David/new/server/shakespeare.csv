@@ -1,0 +1,124 @@
+{
+"title": "Integrated Chinese Level 1 Volume I, Lesson 5 Dialogue 1", 
+"actors": [
+    {"name": "Li You", "id": "F1"},
+    {"name": "Wang Peng", "id": "M1"},
+    {"name": "Gao Xiaoyin", "id": "F2"}
+],
+"dialogue": [
+    {"id": 1,
+    "actor": "F1",
+    "zh": "谁呀",
+    "py": "Shéi ya?",
+    "en": "who is it?",
+    "mp3": "L5-1-1.mp3"
+    },
+    {"id": 2,
+    "actor": "M1",
+    "zh": "是我，王朋，还有李友",
+    "py": "Shì wǒ, Wáng Péng, hái yǒu Lǐ Yǒu.",
+    "en": "It’s me Wang Peng, Li You is here, too.",
+    "mp3": "L5-1-2.mp3"
+    },
+    {"id": 3,
+    "actor": "F1",
+    "zh": "请进，请进，快进来",
+    "py": "Qǐng jìn, qǐng jìn, kuài jìn lai",
+    "en": "Please come in, please come in, come on in",
+    "mp3": "L5-1-3-1.mp3"
+    },
+    {"id": 4,
+    "actor": "M1",
+    "zh": "来，我介绍一下，这是我姐姐，高小音",
+    "py": "Lái, wǒ jièshào yí xià, zhè shì wǒ jiějie, Gāo Xiǎoyīn",
+    "en": "",
+    "mp3": ["L5-1-3-2.mp3", "L5-1-3-3.mp3"]
+    },
+    {"id": 5,
+    "actor": "F1",
+    "zh": "小音，你好, 认识你很高兴",
+    "py": "Xiǎoyīn, nǐ hǎo, Rènshi nǐ hěn gāoxìng",
+    "en": "How do you do, Xiaoyin, pleased to meet you",
+    "mp3": ["L5-1-4-1.mp3", "L5-1-4-2.mp3"]
+    },
+    {"id": 6,
+    "actor": "F2",
+    "zh": "你们家很大，也很漂亮,",
+    "py": "Nǐmen jiā hěn dà, yě hěn piàoliang",
+    "en": "Your home is very big, and very beautiful, too,",
+    "mp3": ["L5-1-6-1.mp3", "L5-1-6-2.mp3"]
+    },
+    {"id": 7,
+    "actor": "F1",
+    "zh": "是吗，请坐，请坐",
+    "py": "Shì ma? Qǐng zuò, qǐng zuò,",
+    "en": "Really, have a seat, please,",
+    "mp3": "L5-1-7.mp3"
+    },
+    {"id": 8,
+    "actor": "F1",
+    "zh": "小音，你在哪儿工作?",
+    "py": "Xiǎoyīn, nǐ zài nǎr gōngzuò?",
+    "en": "Xiaoyin, where do you work?",
+    "mp3": "L5-1-8.mp3"
+    },
+    {"id": 9,
+    "actor": "F2",
+    "zh": "我在学校工作",
+    "py": "Wǒ zài xuéxiào gōngzuò",
+    "en": "I work at a school",
+    "mp3": "L5-1-9-1.mp3"
+    },
+    {"id": 10,
+    "actor": "F1",
+    "zh": "你们想喝点儿什么, 喝茶还是喝咖啡?",
+    "py": "Nǐmen xiǎng hē diǎnr shénme, Hē chá háishi hē kāfēi?",
+    "en": "What would you like to drink, tea or coffee?",
+    "mp3": ["L5-1-9-2.mp3", "L5-1-9-3.mp3"]
+    },
+    {"id": 11,
+    "actor": "M1",
+    "zh": "我喝茶吧",
+    "py": "Wǒ hē chá ba",
+    "en": "I’ll have tea",
+    "mp3": "L5-1-10.mp3"
+    },
+    {"id": 12,
+    "actor": "F2",
+    "zh": "我要一瓶可乐，可以吗",
+    "py": "Wǒ yào yì píng kělè, kěyǐ ma",
+    "en": "I’d like a bottle of cola, is that OK",
+    "mp3": "L5-1-11.mp3 "
+    },
+    {"id": 13,
+    "actor": "F1",
+    "zh": "对不起，我们家没有可乐",
+    "py": "Duìbuqǐ, wǒmen jiā méi yǒu kělè",
+    "en": "I’m sorry, we don’t have cola",
+    "mp3": "L5-1-12.mp3"
+    },
+    {"id": 14,
+    "actor": "F2",
+    "zh": "那给我一杯水吧",
+    "py": "nà gěi wǒ yī bēi shuǐ ba",
+    "en": "Then please give me a glass of water",
+    "mp3": "L5-1-13.mp3"
+    }
+]
+}
+谁呀
+{"611020994dc20d27349e181e": {"name": "l1v1l5d1", "act": {"title": "Integrated Chinese Level 1 Volume I, Lesson 5 Dialogue 1", "actors": [{"name": "Li You", "id": "F1"}, {"name": "Wang Peng", "id": "M1"}, {"name": "Gao Xiaoyin", "id": "F2"}], "dialogue": [{"id": 1, "actor": "F1", "zh": "\u8c01\u5440", "py": "Sh\u00e9i ya?", "en": "who is it?", "mp3": "L5-1-1.mp3"}, {"id": 2, "actor": "M1", "zh": "\u662f\u6211\uff0c\u738b\u670b\uff0c\u8fd8\u6709\u674e\u53cb", "py": "Sh\u00ec w\u01d2, W\u00e1ng P\u00e9ng, h\u00e1i y\u01d2u L\u01d0 Y\u01d2u.", "en": "It\u2019s me Wang Peng, Li You is here, too.", "mp3": "L5-1-2.mp3"}, {"id": 3, "actor": "F1", "zh": "\u8bf7\u8fdb\uff0c\u8bf7\u8fdb\uff0c\u5feb\u8fdb\u6765", "py": "Q\u01d0ng j\u00ecn, q\u01d0ng j\u00ecn, ku\u00e0i j\u00ecn lai", "en": "Please come in, please come in, come on in", "mp3": "L5-1-3-1.mp3"}, {"id": 4, "actor": "M1", "zh": "\u6765\uff0c\u6211\u4ecb\u7ecd\u4e00\u4e0b\uff0c\u8fd9\u662f\u6211\u59d0\u59d0\uff0c\u9ad8\u5c0f\u97f3", "py": "L\u00e1i, w\u01d2 ji\u00e8sh\u00e0o y\u00ed xi\u00e0, zh\u00e8 sh\u00ec w\u01d2 ji\u011bjie, G\u0101o Xi\u01ceoy\u012bn", "en": "", "mp3": ["L5-1-3-2.mp3", "L5-1-3-3.mp3"]}, {"id": 5, "actor": "F1", "zh": "\u5c0f\u97f3\uff0c\u4f60\u597d, \u8ba4\u8bc6\u4f60\u5f88\u9ad8\u5174", "py": "Xi\u01ceoy\u012bn, n\u01d0 h\u01ceo, R\u00e8nshi n\u01d0 h\u011bn g\u0101ox\u00ecng", "en": "How do you do, Xiaoyin, pleased to meet you", "mp3": ["L5-1-4-1.mp3", "L5-1-4-2.mp3"]}, {"id": 6, "actor": "F2", "zh": "\u4f60\u4eec\u5bb6\u5f88\u5927\uff0c\u4e5f\u5f88\u6f02\u4eae,", "py": "N\u01d0men ji\u0101 h\u011bn d\u00e0, y\u011b h\u011bn pi\u00e0oliang", "en": "Your home is very big, and very beautiful, too,", "mp3": ["L5-1-6-1.mp3", "L5-1-6-2.mp3"]}, {"id": 7, "actor": "F1", "zh": "\u662f\u5417\uff0c\u8bf7\u5750\uff0c\u8bf7\u5750", "py": "Sh\u00ec ma? Q\u01d0ng zu\u00f2, q\u01d0ng zu\u00f2,", "en": "Really, have a seat, please,", "mp3": "L5-1-7.mp3"}, {"id": 8, "actor": "F1", "zh": "\u5c0f\u97f3\uff0c\u4f60\u5728\u54ea\u513f\u5de5\u4f5c?", "py": "Xi\u01ceoy\u012bn, n\u01d0 z\u00e0i n\u01cer g\u014dngzu\u00f2?", "en": "Xiaoyin, where do you work?", "mp3": "L5-1-8.mp3"}, {"id": 9, "actor": "F2", "zh": "\u6211\u5728\u5b66\u6821\u5de5\u4f5c", "py": "W\u01d2 z\u00e0i xu\u00e9xi\u00e0o g\u014dngzu\u00f2", "en": "I work at a school", "mp3": "L5-1-9-1.mp3"}, {"id": 10, "actor": "F1", "zh": "\u4f60\u4eec\u60f3\u559d\u70b9\u513f\u4ec0\u4e48, \u559d\u8336\u8fd8\u662f\u559d\u5496\u5561?", "py": "N\u01d0men xi\u01ceng h\u0113 di\u01cenr sh\u00e9nme, H\u0113 ch\u00e1 h\u00e1ishi h\u0113 k\u0101f\u0113i?", "en": "What would you like to drink, tea or coffee?", "mp3": ["L5-1-9-2.mp3", "L5-1-9-3.mp3"]}, {"id": 11, "actor": "M1", "zh": "\u6211\u559d\u8336\u5427", "py": "W\u01d2 h\u0113 ch\u00e1 ba", "en": "I\u2019ll have tea", "mp3": "L5-1-10.mp3"}, {"id": 12, "actor": "F2", "zh": "\u6211\u8981\u4e00\u74f6\u53ef\u4e50\uff0c\u53ef\u4ee5\u5417", "py": "W\u01d2 y\u00e0o y\u00ec p\u00edng k\u011bl\u00e8, k\u011by\u01d0 ma", "en": "I\u2019d like a bottle of cola, is that OK", "mp3": "L5-1-11.mp3 "}, {"id": 13, "actor": "F1", "zh": "\u5bf9\u4e0d\u8d77\uff0c\u6211\u4eec\u5bb6\u6ca1\u6709\u53ef\u4e50", "py": "Du\u00ecbuq\u01d0, w\u01d2men ji\u0101 m\u00e9i y\u01d2u k\u011bl\u00e8", "en": "I\u2019m sorry, we don\u2019t have cola", "mp3": "L5-1-12.mp3"}, {"id": 14, "actor": "F2", "zh": "\u90a3\u7ed9\u6211\u4e00\u676f\u6c34\u5427", "py": "n\u00e0 g\u011bi w\u01d2 y\u012b b\u0113i shu\u01d0 ba", "en": "Then please give me a glass of water", "mp3": "L5-1-13.mp3"}]}, "_id": "611020994dc20d27349e181e"}}
+0: 谁呀
+1: 是我，王朋，还有李友
+2: 请进，请进，快进来
+3: 来，我介绍一下，这是我姐姐，高小音
+4: 小音，你好, 认识你很高兴
+5: 你们家很大，也很漂亮,
+6: 是吗，请坐，请坐
+7: 小音，你在哪儿工作?
+8: 我在学校工作
+9: 你们想喝点儿什么, 喝茶还是喝咖啡?
+10: 我喝茶吧
+11: 我要一瓶可乐，可以吗
+12: 对不起，我们家没有可乐
+13: 那给我一杯水吧
