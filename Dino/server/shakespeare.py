@@ -72,8 +72,9 @@ BASE_URL = None
 def add_act():
     global acts
 
-    name = request.json['name']
-    act = request.json['act']
+    js = json.loads(request.json)
+    name = js['name']
+    act = json.dumps(js['act'])
 
     #ubd
     for k,g in acts.items():
@@ -86,6 +87,7 @@ def add_act():
     acts.clear()
     print("acts:", acts)
     print()
+    print("act", act)
 
     myact = dict(name=name, act=json.loads(act), _id=str(ObjectId()))
     acts[myact['_id']] = myact
@@ -131,6 +133,9 @@ def add_act():
                 f.write((str(i) + ": ").encode('utf-8'))
                 f.write(d['zh'].encode('utf-8'))
                 f.write('\n'.encode('utf8'))
+
+    with app.test_client() as c:
+        rv = c.get('/bootstrap')
 
     return jsonify(act)
 
@@ -445,7 +450,7 @@ l1v1l5d1 = """{
     "actor": "M1",
     "zh": "来，我介绍一下，这是我姐姐，高小音",
     "py": "Lái, wǒ jièshào yí xià, zhè shì wǒ jiějie, Gāo Xiǎoyīn",
-    "en": "",
+    "en": "Come here, let me introduce, this is my older sister, Gao Xiaoyin.",
     "mp3": ["L5-1-3-2.mp3", "L5-1-3-3.mp3"]
     },
     {"id": 5,
@@ -523,37 +528,46 @@ l1v1l5d1 = """{
 
 @app.route("/mock-l1v1l5d1", methods=["GET"])
 def mock_l1v1l5d1():
-    json_data_all = []
     with app.test_client() as c:
-        
-        # 1. actors
-        json_data = []
-        json_data_all.append("@@@ actors")
-        rv = c.post('/actor', json={
-            'name': 'Li You'
-        })
-        json_data.append(rv.get_json())
-        rv = c.post('/actor', json={
-            'name': 'Wang Peng'
-        })
-        json_data.append(rv.get_json())
-        rv = c.post('/actor', json={
-            'name': 'Gao Xiaoyin'
-        })
-        json_data.append(rv.get_json())
-        json_data_all.append(actors)
-
-        # 2. acts
-        json_data = []
-        json_data_all.append("@@@ acts")
         rv = c.post('/act', json={
             'name': 'l1v1l5d1', 'act': l1v1l5d1
         })
-        json_data.append(rv.get_json())
-        json_data_all.append(acts)
 
-    return jsonify(json_data_all)
+    return ""
+
+    # json_data_all = []
+    # with app.test_client() as c:
+    #     print(c)
+        
+    #     # 1. actors
+    #     json_data = []
+    #     json_data_all.append("@@@ actors")
+    #     rv = c.post('/actor', json={
+    #         'name': 'Li You'
+    #     })
+    #     json_data.append(rv.get_json())
+    #     rv = c.post('/actor', json={
+    #         'name': 'Wang Peng'
+    #     })
+    #     json_data.append(rv.get_json())
+    #     rv = c.post('/actor', json={
+    #         'name': 'Gao Xiaoyin'
+    #     })
+    #     json_data.append(rv.get_json())
+    #     json_data_all.append(actors)
+
+    #     # 2. acts
+    #     json_data = []
+    #     json_data_all.append("@@@ acts")
+    #     rv = c.post('/act', json={
+    #         'name': 'l1v1l5d1', 'act': l1v1l5d1
+    #     })
+    #     json_data.append(rv.get_json())
+    #     json_data_all.append(acts)
+
+    # return jsonify(json_data_all)
 
 
 if __name__ == '__main__':
+    app.config['JSON_AS_ASCII'] = False
     app.run(debug=True)

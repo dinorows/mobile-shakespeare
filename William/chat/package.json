@@ -11,6 +11,9 @@
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "react-speech-recognition": "^3.8.2",
+    "react-timer-hook": "^3.0.5",
+    "use-file-picker": "^1.4.0",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

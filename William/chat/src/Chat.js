@@ -1,9 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import { useTimer } from 'react-timer-hook';
+import { useFilePicker } from 'use-file-picker';
 
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const dialog = {
     "actors": [
@@ -101,7 +105,51 @@ function Chat() {
     const [userEntry, setUserEntry] = useState("");
     const [messageId, setMessageId] = useState(1);
 
+    const [ready, setReady] = useState(false); // Hook for initial upload
+    const [training, setTraining] = useState(false); // Hook for training
+
     const { transcript, resetTranscript, listening, browserSupportsSpeechRecognition } = useSpeechRecognition();
+
+    const expireCount = 60;
+    const dateObj = new Date();
+    dateObj.setSeconds(dateObj.getSeconds() + expireCount)
+    const { restart } = useTimer({ dateObj, onExpire: () => processAudioMessage() });
+
+    useEffect(() => {
+        const time = new Date();
+        if (transcript.length > 0) {
+            time.setSeconds(time.getSeconds() + 2);
+        } else if (ready) {
+            SpeechRecognition.startListening({
+                continuous: true,
+                language: 'zh-CN',
+            })
+            time.setSeconds(time.getSeconds() + expireCount)
+        }
+        restart(time, true);
+    }, [transcript]);
+
+    const [openFileSelector, { filesContent, loading }] = useFilePicker({
+        accept: '.json',
+    });
+
+    useEffect(() => {
+        if (filesContent.length === 1) {
+            const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(filesContent[0].content)
+            };
+
+            setReady(true)
+            setTraining(true);
+            fetch('http://localhost:5000/act', requestOptions).then(() => {
+                setTraining(false)
+                startListening()
+                setMessages([{ id: 0, message: "Hello! 你好！", user: false },])
+            });
+        }
+    }, [filesContent]);
 
     const messagesEndRef = useRef(null)
 
@@ -139,10 +187,15 @@ function Chat() {
     }
 
     function startListening() {
+        const time = new Date();
+
+        time.setSeconds(time.getSeconds() + expireCount);
+        restart(time, true);
+
         SpeechRecognition.startListening({
             continuous: true,
             language: 'zh-CN',
-        })
+        });
     }
 
     async function processTextMsg(e) {
@@ -155,8 +208,9 @@ function Chat() {
         SpeechRecognition.stopListening();
         if (transcript.length > 0) {
             await processMessage(transcript);
+            resetTranscript();
+            startListening();
         }
-        resetTranscript();
     }
 
     async function processMessage(text) {
@@ -196,20 +250,39 @@ function Chat() {
         setUserEntry(e.target.value);
     }
 
+    function upload() {
+        openFileSelector();
+    }
+
     return (
         <Container>
-            <div className='d-flex flex-column'>
-                <h3 className='py-3 align-self-start'>
-                    Husky Chat Bot
-                </h3>
-            </div>
+            <Container>
+                <Row className='align-items-center'>
+                    <Col>
+                        <div className='d-flex flex-column'>
+                            <h3 className='py-3 align-self-start'>
+                                Husky Chat Bot
+                            </h3>
+                        </div>
+                    </Col>
+                    <Col>
+                        <div className='d-flex flex-column'>
+                            <Button className='align-self-end' size="sm" onClick={upload}>Upload</Button>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
             <div className='py-3' style={{
                 height: '600px',
                 'overflowY': 'scroll'
             }}>
-                {messages && messages.map((msg) => (
-                    renderChat(msg)
-                ))}
+                {ready ?
+                    training ?
+                        <div>Training...</div> :
+                        messages && messages.map((msg) => (
+                            renderChat(msg)
+                        )) :
+                    <div>Upload a dialog</div>}
                 <div ref={messagesEndRef} />
             </div>
             <div>
