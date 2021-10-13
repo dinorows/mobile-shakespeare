@@ -12,5 +12,11 @@ random programming poetry on mobile
 9. Offer it as UI for 孝宏教授
 
 ### How to run the code
+1. install all the python package
 
-pip install protobuf
+`pip install -r requirements.txt`
+2. go to client folder
+
+`npm install`
+
+`npm start`

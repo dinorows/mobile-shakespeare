@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6249532-2ed9-4e03-ada8-54fb077756b6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/shakespeare.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/shakespeare.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +80,7 @@
       <workItem from="1631064748429" duration="166000" />
       <workItem from="1631731252989" duration="18000" />
       <workItem from="1633618099928" duration="8051000" />
-      <workItem from="1634090825028" duration="3502000" />
+      <workItem from="1634090825028" duration="5255000" />
     </task>
     <servers />
   </component>
