@@ -10,3 +10,7 @@ random programming poetry on mobile
 7. Convert React to react-native
 8. Upload app on AWS
 9. Offer it as UI for 孝宏教授
+
+# How to run the code
+
+pip install protobuf

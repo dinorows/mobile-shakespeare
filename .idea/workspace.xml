@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c6249532-2ed9-4e03-ada8-54fb077756b6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/David/client/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/David/client/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/client/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/David/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/David/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/client/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/David/client/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/David/client/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/client/public/logo192.png" beforeDir="false" afterPath="$PROJECT_DIR$/David/client/public/logo192.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/client/public/logo512.png" beforeDir="false" afterPath="$PROJECT_DIR$/David/client/public/logo512.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/client/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/David/client/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/client/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/David/client/public/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/David/client/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/David/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/client/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/David/client/src/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/client/src/Chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/David/client/src/Chat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/David/client/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/David/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/client/src/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/David/client/src/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/client/src/reportWebVitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/David/client/src/reportWebVitals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/client/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/David/client/src/setupTests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/David/client/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/server/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/David/server/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/server/shakespeare.csv" beforeDir="false" afterPath="$PROJECT_DIR$/David/server/shakespeare.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/new/server/shakespeare.py" beforeDir="false" afterPath="$PROJECT_DIR$/David/server/shakespeare.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/src/components/Appbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/src/pages/About/About.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/src/pages/Chart/Chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/src/pages/Deposits/Deposits.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/src/pages/Home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/src/pages/Orders/Orders.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/src/pages/PageNotFound/PageNotFound.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/src/pages/Store/Store.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/src/serviceWorker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/David/old/src/steps.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/cellphone-bert-sentence-embeddings.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/cellphone-nlp-sentence-transformers.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/client/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/client/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/client/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/client/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/client/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/client/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/client/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/client/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/client/readme-dino.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/client/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/client/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/client/src/cn.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/client/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/client/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/client/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/client/src/microphone.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/client/src/pinyin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/client/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/client/src/us.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/server/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/server/shakespeare.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dino/server/shakespeare.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/chat/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/chat/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/chat/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/chat/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/chat/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/chat/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/chat/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/chat/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/chat/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/chat/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/chat/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/chat/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/chat/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/chat/src/Chat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/chat/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/chat/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/chat/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/chat/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/chat/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/chat/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/src/components/Appbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/src/dialogue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/src/pages/About/About.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/src/pages/Chart/Chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/src/pages/Deposits/Deposits.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/src/pages/Home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/src/pages/Orders/Orders.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/src/pages/PageNotFound/PageNotFound.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/src/pages/Store/Store.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/src/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/src/serviceWorker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/old/src/steps.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/tfjs/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/tfjs/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/tfjs/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/William/tfjs/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/src/components/Appbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/src/pages/About/About.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/src/pages/Chart/Chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/src/pages/Deposits/Deposits.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/src/pages/Home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/src/pages/Orders/Orders.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/src/pages/PageNotFound/PageNotFound.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/src/pages/Store/Store.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/src/serviceWorker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/similarity_library/src/steps.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tensorflow/app.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1xoYVRbcrbmF92QTHx7jXN9t4ig" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="shakespeare" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="mobile-shakespeare" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/David/new/server" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/David/new/server/shakespeare.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.shakespeare" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c6249532-2ed9-4e03-ada8-54fb077756b6" name="Default Changelist" comment="" />
+      <created>1631022931430</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1631022931430</updated>
+      <workItem from="1631022933476" duration="4311000" />
+      <workItem from="1631064748429" duration="166000" />
+      <workItem from="1631731252989" duration="18000" />
+      <workItem from="1633618099928" duration="8051000" />
+      <workItem from="1634090825028" duration="665000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1506" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1633621893910">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1506" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1633621893910" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1631022994105" />
+    <state x="260" y="278" key="FileChooserDialogImpl" timestamp="1631731269481">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="260" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1631731269481" />
+    <state width="1877" height="347" key="GridCell.Tab.0.bottom" timestamp="1633643467254">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1633643467254" />
+    <state width="914" height="264" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1631044619927" />
+    <state width="1877" height="347" key="GridCell.Tab.0.center" timestamp="1633643467254">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1633643467254" />
+    <state width="914" height="264" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1631044619927" />
+    <state width="1877" height="347" key="GridCell.Tab.0.left" timestamp="1633643467254">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1633643467254" />
+    <state width="914" height="264" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1631044619927" />
+    <state width="1877" height="347" key="GridCell.Tab.0.right" timestamp="1633643467254">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="347" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1633643467254" />
+    <state width="914" height="264" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1631044619927" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1631022988513">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1631022988513" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/mobile_shakespeare$shakespeare.coverage" NAME="shakespeare Coverage Results" MODIFIED="1633628140869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/David/new/server" />
+  </component>
+</project>
