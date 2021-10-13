@@ -1,23 +1,9 @@
+import os
 from flask import Flask, flash, request, jsonify, render_template, redirect, url_for, g, session, send_from_directory, \
     abort
 from flask_cors import CORS
 from flask_api import status
-
-from datetime import date, datetime, timedelta
-# from dateutil.parser import parse
-import pytz
-import os
-import sys
-import time
-import uuid
 import json
-import random
-import array
-import string
-import pathlib
-import io
-from uuid import UUID
-from snownlp import SnowNLP
 from bson.objectid import ObjectId
 
 from sentence_transformers import SentenceTransformer
