@@ -1,9 +1,10 @@
-from flask import Flask, flash, request, jsonify, render_template, redirect, url_for, g, session, send_from_directory, abort
+from flask import Flask, flash, request, jsonify, render_template, redirect, url_for, g, session, send_from_directory, \
+    abort
 from flask_cors import CORS
 from flask_api import status
 
 from datetime import date, datetime, timedelta
-#from dateutil.parser import parse
+# from dateutil.parser import parse
 import pytz
 import os
 import sys
@@ -16,17 +17,22 @@ import string
 import pathlib
 import io
 from uuid import UUID
+from snownlp import SnowNLP
 from bson.objectid import ObjectId
 
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
+from transformers import pipeline
+classifier = pipeline("zero-shot-classification",
+                      model="joeddav/xlm-roberta-large-xnli")
+
 
 # straight mongo access
-#from pymongo import MongoClient
-#from motor.motor_asyncio import AsyncIOMotorClient
+# from pymongo import MongoClient
+# from motor.motor_asyncio import AsyncIOMotorClient
 
 # mongo
-#mongo_client = MongoClient('mongodb://localhost:27017/')
+# mongo_client = MongoClient('mongodb://localhost:27017/')
 
 # pip install -U sentence-transformers
 
@@ -36,14 +42,15 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 # Here are my datasets
 acts = dict()
-actors = dict()  
+actors = dict()
 zh_embeddings = dict()
-en_embeddings = dict() 
+en_embeddings = dict()
 
 # local collections: 
 collections = (acts, actors, zh_embeddings, en_embeddings)
 prefixes = ('ac', 'at', 'ez', 'ee')
 cnames = ('acts', 'actors', 'zh_embeddings', 'en_embeddings')
+
 
 def tryexcept(requesto, key, default):
     lhs = None
@@ -54,11 +61,12 @@ def tryexcept(requesto, key, default):
         lhs = default
     return lhs
 
+
 # test
 @app.route("/test401", methods=["GET"])
 def test_401():
-    #from Flask import Response
-    #return Response("{'a':'b'}", status=401, mimetype='application/json')
+    # from Flask import Response
+    # return Response("{'a':'b'}", status=401, mimetype='application/json')
     return jsonify(("Authentication is required and has failed!", status.HTTP_401_UNAUTHORIZED))
 
 
@@ -68,6 +76,8 @@ def test_401():
 
 # endpoint to create new act
 BASE_URL = None
+
+
 @app.route("/act", methods=["POST"])
 def add_act():
     global acts
@@ -75,8 +85,8 @@ def add_act():
     name = request.json['name']
     act = request.json['act']
 
-    #ubd
-    for k,g in acts.items():
+    # ubd
+    for k, g in acts.items():
         if name.lower() == g['name'].lower():
             # https://www.flaskapi.org/api-guide/status-codes/
             print("Duplicate name in acts: ", name)
@@ -96,7 +106,7 @@ def add_act():
     # of "\u6211\u8981\u4e00\u74f6\u53ef\u4e50\uff0c\u53ef\u4ee5\u5417" for zh
     # and "W\u01d2 y\u00e0o y\u00ec p\u00edng k\u011bl\u00e8, k\u011by\u01d0 ma" for pinyin
     # For some reason, printing hanzi to screen does not work on my console :-(
-    with open('shakespeare.csv','wb') as f:
+    with open('shakespeare.csv', 'wb') as f:
         # f.write('迪诺\n'.encode('utf8'))
         # f.write(bytes(j['dialogue'][0]['zh'], 'utf-8'))
         # f.write('\n'.encode('utf8'))
@@ -124,10 +134,10 @@ def add_act():
         #                     f.write('\n'.encode('utf8'))
 
         # iterating over chinese sentences:
-        for ak,av in acts.items(): # iterate over all acts
-            for i,d in enumerate(av['act']['dialogue']): # iterate over all sentences
-                #print(d) # print all items
-                #print(d['zh']) # print chinese sentence
+        for ak, av in acts.items():  # iterate over all acts
+            for i, d in enumerate(av['act']['dialogue']):  # iterate over all sentences
+                # print(d) # print all items
+                # print(d['zh']) # print chinese sentence
                 f.write((str(i) + ": ").encode('utf-8'))
                 f.write(d['zh'].encode('utf-8'))
                 f.write('\n'.encode('utf8'))
@@ -142,15 +152,17 @@ def get_acts():
     # return jsonify([v for k,v in acts.items()])
     return jsonify(acts)
 
+
 # endpoint to get act from id
 @app.route("/act-fom-id/<id>", methods=["GET"])
 def act_from_id(id):
     return jsonify(acts[id])
 
+
 # endpoint to get act from name
 @app.route("/act-fom-name/<name>", methods=["GET"])
 def act_from_name(name):
-    return jsonify([v['dialogue'] for k,v in acts.items() if v['name'] == name])
+    return jsonify([v['dialogue'] for k, v in acts.items() if v['name'] == name])
 
 
 ####################################
@@ -162,32 +174,36 @@ def act_from_name(name):
 def add_actor():
     name = request.json['name']
 
-    #ubd
-    for k,g in actors.items():
+    # ubd
+    for k, g in actors.items():
         if name.lower() == g['name'].lower():
             # https://www.flaskapi.org/api-guide/status-codes/
             print("Duplicate name in actors: ", name)
             return jsonify(("Duplicate name in actors!", status.HTTP_409_CONFLICT))
 
-    #group = dict(name=name, moniker=moniker, miles = 0, active=True, uuid=uuid.uuid1())
+    # group = dict(name=name, moniker=moniker, miles = 0, active=True, uuid=uuid.uuid1())
     actor = dict(name=name, _id=str(ObjectId()))
     actors[actor['_id']] = actor
 
     return jsonify(actor)
 
+
 # endpoint to show all actor names
 @app.route("/actors", methods=["GET"])
 def get_actors():
-    return jsonify([v for k,v in actors.items()])
+    return jsonify([v for k, v in actors.items()])
+
 
 # endpoint to get actor from id
 @app.route("/actor-from-id/<id>", methods=["GET"])
 def actor_from_id(id):
     return jsonify(actors[id])
 
+
 @app.route("/test", methods=["POST"])
 def test():
     return jsonify("hello world!")
+
 
 #############################################
 # Smart dialogue based on sentence similarity
@@ -207,18 +223,22 @@ def home():
         /actors<br />
     """
 
+
 # cosine between two sentences
 def cosine(s1, s2):
     return cosine_similarity([s1], [s2])
+
 
 # show BERT embeddings
 @app.route("/embeddings-en", methods=["GET"])
 def my_embeddings_en():
     return jsonify(en_embeddings)
 
+
 @app.route("/embeddings-zh", methods=["GET"])
 def my_embeddings_zh():
     return jsonify(zh_embeddings)
+
 
 # find next sentence in dialogue based on closest BERT embedding
 # by looking at the cosine of the sentence with every other sentence,
@@ -255,6 +275,9 @@ def next_en(s):
     else:
         print("next sentence in the dialogue:")
         print(best_index + 1, en_embeddings[best_index + 1]['sentence'])
+        sequence_to_classify = zh_embeddings[best_index + 1]['sentence'].decode("utf-8")
+        candidate_labels = ["happiness", "sadness", "fear", "disgust", "anger", "surprise"]
+        print(classifier(sequence_to_classify, candidate_labels))
         return jsonify((best_index + 1, en_embeddings[best_index + 1]['sentence']))
 
 
@@ -281,14 +304,18 @@ def next_zh(s):
             best_cosine = new_cosine
 
     print("closest sentence:")
-    print(best_index, best_cosine, zh_embeddings[best_index]['sentence'])
+    print(best_index, best_cosine, zh_embeddings[best_index]['sentence'].decode("utf-8"))
 
     if best_index == len(zh_embeddings) - 1:
         print("end of dialogue!")
         return jsonify("end of dialogue!")
     else:
         print("next sentence in the dialogue:")
-        print(best_index + 1, zh_embeddings[best_index + 1]['sentence'])
+        print(best_index + 1, zh_embeddings[best_index + 1]['sentence'].decode("utf-8"))
+        sequence_to_classify = zh_embeddings[best_index + 1]['sentence'].decode("utf-8")
+        candidate_labels = ["高兴", "难过", "恐惧", "恶心", "生气", "惊讶"]
+        print(classifier(sequence_to_classify, candidate_labels))
+        classifier(sequence_to_classify, candidate_labels)
         return jsonify((best_index + 1, zh_embeddings[best_index + 1]['sentence'].decode("utf-8")))
 
 
@@ -316,19 +343,25 @@ def next():
             best_cosine = new_cosine
 
     print("closest sentence:")
-    print(best_index, best_cosine, zh_embeddings[best_index]['sentence'] if zh else en_embeddings[best_index]['sentence'])
+    print(best_index, best_cosine,
+          zh_embeddings[best_index]['sentence'] if zh else en_embeddings[best_index]['sentence'])
 
     if best_index == len(zh_embeddings if zh else en_embeddings) - 1:
         print("end of dialogue!")
         return jsonify("end of dialogue!")
     else:
         print("next sentence in the dialogue:")
-        print(best_index + 1, zh_embeddings[best_index + 1]['sentence'] if zh else en_embeddings[best_index + 1]['sentence'])
-        return jsonify(zh_embeddings[best_index + 1]['sentence'].decode("utf-8") if zh else en_embeddings[best_index + 1]['sentence'])
+        print(best_index + 1,
+              zh_embeddings[best_index + 1]['sentence'] if zh else en_embeddings[best_index + 1]['sentence'])
+        return jsonify(
+            zh_embeddings[best_index + 1]['sentence'].decode("utf-8") if zh else en_embeddings[best_index + 1][
+                'sentence'])
 
 
 # compute and store the BERT embeddings for all sentences in dialogue of each act
 model = None
+
+
 @app.route("/bootstrap", methods=["GET"])
 def bootstrap():
     global model
@@ -352,8 +385,8 @@ def bootstrap():
 
     # iterating over sentences in dialogue:
     print("embeddings:")
-    for ak,av in acts.items(): # iterate over all acts
-        for i,d in enumerate(av['act']['dialogue']): # iterate over all sentences
+    for ak, av in acts.items():  # iterate over all acts
+        for i, d in enumerate(av['act']['dialogue']):  # iterate over all sentences
             # generate english embedding
             print(d['en'])
             e1 = model.encode(d['en'])
@@ -363,11 +396,12 @@ def bootstrap():
 
             # generate chinese embedding
             print(d['zh'])
-            #e2 = model.encode(d['zh'].encode('utf-8'))
+            # e2 = model.encode(d['zh'].encode('utf-8'))
             e2 = model.encode(d['zh'])
             print(i, e2[0:10])
             print()
-            zh_embedding = dict(act=av['_id'], sentence=d['zh'].encode('utf-8'), rank=i, embedding=e2, _id=str(ObjectId()))
+            zh_embedding = dict(act=av['_id'], sentence=d['zh'].encode('utf-8'), rank=i, embedding=e2,
+                                _id=str(ObjectId()))
             zh_embeddings[i] = zh_embedding
 
     print("done!")
@@ -391,8 +425,8 @@ jsonString = """{"menu": {
   }
 }}"""
 jsonData = json.loads(jsonString)
-#type(jsonData)
-#print(jsonData['menu'])
+# type(jsonData)
+# print(jsonData['menu'])
 
 # Integrated Chinese Level 1 Volume I, Lesson 5 Dialogue 1
 # M1:    谁呀, Shéi ya, who is it, L5-1-1.mp3
@@ -622,11 +656,11 @@ l1v1l10d1 = """{
 ]
 }"""
 
+
 @app.route("/mock-l1v1l5d1", methods=["GET"])
 def mock_l1v1l5d1():
     json_data_all = []
     with app.test_client() as c:
-        
         # 1. actors
         json_data = []
         json_data_all.append("@@@ actors")
