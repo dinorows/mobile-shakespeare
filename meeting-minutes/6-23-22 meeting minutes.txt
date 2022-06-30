@@ -1,0 +1,17 @@
+backend:
+=======
+faiss 1.3 s to compute 300 cosine similarties --> 0.03s
+faiss is calculating the closest sentence, with accuracy of 99% 
+
+stored: Would you like a glass of tea?
+stored: I really like coke?
+incoming: How about some coke?
+
+Please build 10 of these use cases. What does faiss find?
+If faiss picks the wrong sentence, then also use our POS tag scheme
+(we compute some kind of POS tag-related distance)
+
+front-end:
+========
+-certificate
+- nice bug!

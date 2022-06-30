@@ -1,0 +1,32 @@
+Backend team:
+--------------------
+We will use BERT-based embeddings, we will also cluster them for e-z searching, but
+instead of trying to find the closest embedding to recognize an incoming sentence,
+we will find the top-10 embeddings.
+
+THEN, we will locate the best choice by looking at the POS tags, and we will select
+the sentence with the most similar POS tags.
+
+We already talked at length how to get the POS tags.
+
+Because "I would like a cup of tea" should be equal to "I would like a bottle of beer"
+because it plays the same role in our learning-a-foreign language textbooks.
+
+I would like Will and Xinru to please work on a data access layer that uses these two
+filtering critera to return the index of the most likely sentence in our database.
+
+Please test with 20 word-modified sentences and verify that we recognize the right
+sentences.
+
+Also, benchmark (measure time) it takes to locate closest sentence because if we have
+100,000 sentences stored, the time should not be linear to 100,000, it should be log
+srt(100,000). This is why we wat to use faiss. 
+
+Front-end team:
+----------------------
+Expand on the bug we saw previous meeting, where the oval suddenly changed shape
+to a coral. And use that code to make the oval grow an eyebrow for surprise and change 
+the shape of the jaw for sad/ahhpy/angry.
+
+Peter has already discovered how to do the certificate, so we'll be able to put both be
+and fe on AWS VM.
